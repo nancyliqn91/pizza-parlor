@@ -13,7 +13,7 @@
 
   Pizza.prototype.addPrice = function() {
     let sum;
-    if (!this.size.checked) {
+    if (this.size === null) {
       return sum = this.toppings + 100;
     }
     else {
