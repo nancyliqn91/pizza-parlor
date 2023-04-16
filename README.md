@@ -45,8 +45,14 @@ Describe: Pizza.prototype.addPrice()
   const myPizza = new Pizza(1, 2, 'order1');
   myPizza.addPrice()
   Expected Output: 3
-  
-    
+
+Describe: Pizza.prototype.addPrice()
+
+  test: "It should add $100 if the user does not select a size."
+  Code:
+  const myPizza = new Pizza(1, , 'order1');
+  myPizza.addPrice()
+  Expected Output: 101   
 ```
 ## Known Bugs
 
