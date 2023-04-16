@@ -12,6 +12,11 @@
   }
 
   Pizza.prototype.addPrice = function() {
-    let sum = this.toppings + this.size;
-    return sum;
+    let sum;
+    if (!this.size.checked) {
+      return sum = this.toppings + 100;
+    }
+    else {
+      return sum = this.toppings + this.size;
+    }
   }
