@@ -30,7 +30,13 @@ Describe: Pizza()
   const myPizza = new Pizza(1, 2, 'order1');
   Expected Output: Pizza {toppings: 1, size: 2, name: 'order1'}
 
+Describe: Pizza.prototype.countName()
 
+  test: "It should  checks if object name is less than 4 letters long, and if so changes this name to equal "invalid name"."
+  Code:
+  const myPizza = new Pizza(1, 2, 'ord');
+  myPizza.prototype.countName()
+  Expected Output: "invalid name"
   
 ```
 ## Known Bugs
