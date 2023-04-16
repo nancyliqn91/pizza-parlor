@@ -54,6 +54,7 @@ Describe: Pizza.prototype.addPrice()
   myPizza.addPrice()
   Expected Output: 101   
 ```
+
 ## Known Bugs
 
 No bugs 
