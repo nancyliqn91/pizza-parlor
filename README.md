@@ -38,6 +38,15 @@ Describe: Pizza.prototype.countName()
   myPizza.prototype.countName()
   Expected Output: "invalid name"
   
+Describe: Pizza.prototype.addPrice()
+
+  test: "It should return a sum of numbers from inputted number."
+  Code:
+  const myPizza = new Pizza(1, 2, 'order1');
+  myPizza.addPrice()
+  Expected Output: 3
+  
+    
 ```
 ## Known Bugs
 
