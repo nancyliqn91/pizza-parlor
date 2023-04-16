@@ -10,3 +10,8 @@
       return 'invalid name'
     }
   }
+
+  Pizza.prototype.addPrice = function() {
+    let sum = this.toppings + this.size;
+    return sum;
+  }
