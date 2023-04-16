@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Pizza Parlor</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+  <!-- Introduction part -->
+  <h1>Welcome to Pizza Parlor!</h1>
+  <p>Please choose the topping first, then the size you want. Your pizza will be on the way!</p>
+  <!-- For pizza choice -->
+  <form id="orders">
+    <label for="toppings-select">Choose a topping:</label>
+    <div>
+      <input type="checkbox" id="pepper" name="toppings" value=3 checked/>
+      <label for="pepper">Green Pepper $3</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="tomato" name="toppings" value=3 />
+      <label for="tomato">Sliced Tomatoes $3</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="cheese" name="toppings" value=4 />
+      <label for="cheese">Cheese $4</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="beef" name="toppings" value=5 />
+      <label for="beef">Beef $5</label>
+    </div>
+  
+  <br>
+  <label for="sizes-select">Choose a size:</label>
+  <br>
+    <input type="radio" name="size" value=10 id="small" checked>
+    <label for="small"> Small - 10"  $10</label><br />
+    <input type="radio" name="size" value=12 id="medium">
+    <label for="medium"> Medium -12"  $12</label><br />
+    <input type="radio" name="size" value=14 id="large">
+    <label for="large"> Large -14"  $14</label><br />
+
+  <div>
+    <button type="submit" >Submit</button>
+  </div>
+  </form>
+  <br>
+  <!-- For pizza price and details to confrim-->
+  <h3>Let's see your pizza price here.</h3>
+  <div id="pizza">
+    <p>Total Price: <span class="total-price"></span></p>
+  </div>
+</body>
+</html>
