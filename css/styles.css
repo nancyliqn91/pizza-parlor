@@ -1,3 +1,14 @@
 body {
   background-color: bisque;
 }
+
+marquee {
+  font-size: 25px;
+  font-style: oblique;
+  color: #df4c0d;
+  background-color: rgb(152, 190, 237);
+  border: 4px dotted grey;
+  padding: 5px;
+  margin: 5px;
+  animation: blink 1s linear infinite
+}
