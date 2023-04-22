@@ -1,4 +1,4 @@
-# Pizza Parlor
+# 🍕Pizza Parlor🍕
 
 #### By _Qian Li_ 😊
 
