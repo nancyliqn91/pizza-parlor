@@ -40,10 +40,11 @@
     const sizeInput = document.querySelector("input[name='size']:checked");
     const size = sizeInput ? parseInt(sizeInput.value) : null;
     const ordersForm = document.querySelector("form#orders");
+    const address = document.querySelector('#location').value;
     
     const newPizza = new Pizza(toppings, size, 'order1', 1);
     let priceTotal = newPizza.addPrice();
-    document.querySelector(".total-price").innerText = priceTotal + " dollars";
+    document.querySelector(".total-price").innerText = `Price is ${priceTotal} dollars. Address is ${address}.`;
 
     ordersForm.reset();
   }
