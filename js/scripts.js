@@ -42,30 +42,28 @@
     const ordersForm = document.querySelector("form#orders");
     const address = document.querySelector('#location').value;
     
-    const newPizza = new Pizza(toppings, size, 'order1', 1);
-    let priceTotal = newPizza.addPrice();
-    document.querySelector(".total-price").innerText = `Price is ${priceTotal} dollars. ${address}.`;
-
-    let totalPrice = 0;
+    let pizzas = [];
+    const newPizza = new Pizza(toppings, size, 'order1', pizzas.length + 1);
+    pizzas.push(newPizza);
+  
+    let priceTotal = 0;
     const pizzaListElement = document.querySelector(".pizza-list");
-    pizzaListElement.innerHTML = ""; // Clear the pizza list
+    pizzaListElement.innerHTML = ""; 
     pizzas.forEach(function(pizza) {
       const pizzaElement = document.createElement("li");
       const pizzaLink = document.createElement("a");
-      pizzaLink.href = "#"; // Set the link's href to a placeholder value
-      pizzaLink.textContent = `Pizza #${pizza.id}`; // Display the pizza order number as link text
+      pizzaLink.href = "#"; 
+      pizzaLink.textContent = `Pizza #${pizza.id}`; 
       pizzaLink.addEventListener("click", function() {
-        // Add click event listener to show pizza details
-        // You can implement the logic to show pizza details here
-        console.log(`Pizza #${pizza.id} Details:`);
-        console.log("Toppings:", pizza.toppings);
-        console.log("Size:", pizza.size);
+      window.alert("Toppings:", pizza.toppings. "Size:", pizza.size);
       });
       pizzaElement.appendChild(pizzaLink);
       pizzaListElement.appendChild(pizzaElement);
-      totalPrice += newPizza.addPrice(pizza.toppings.concat(pizza.size[0])); // Calculate total price for all pizzas
+      priceTotal += pizza.addPrice(); 
+      return priceTotal;
     });
-    document.querySelector(".total-price").innerText = totalPrice + " dollars"; // Update the total price in the HTML
+
+    document.querySelector(".total-price").innerText = `Price is ${priceTotal} dollars. ${address}.`; 
 
     ordersForm.reset();
   }
