@@ -58,17 +58,14 @@
       });
       pizzaElement.appendChild(pizzaLink);
       pizzaListElement.appendChild(pizzaElement);
-      // let priceTotal = 0;
-      // priceTotal += newPizza.addPrice(); 
-      // console.log(priceTotal);
     });
 
     let priceTotal = 0;
     pizzas.forEach(function(pizza) {
       priceTotal += pizza.addPrice(); 
     });
-
-    document.querySelector(".total-price").innerText = `Price is ${priceTotal} dollars. ${address}.`; 
+    console.log(priceTotal);
+    document.querySelector(".total-price").innerText = `Price is ${priceTotal} dollars. ${address}`; 
   }
   
   function handleConfirm(event) {
