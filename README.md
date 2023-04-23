@@ -25,16 +25,16 @@ It will serve as a website for a pizza company where a user can choose one or mo
 ```
 Describe: Pizza()
 
-  Test: "It should return a Pizza object with three properties for toppings, size and name."
+  Test: "It should return a Pizza object with four properties for toppings, size and name."
   Code: 
-  const myPizza = new Pizza(1, 2, 'order1');
-  Expected Output: Pizza {toppings: 1, size: 2, name: 'order1'}
+  const myPizza = new Pizza(1, 2, 'order1', 1);
+  Expected Output: Pizza {toppings: 1, size: 2, name: 'order1', 1}
 
 Describe: Pizza.prototype.countName()
 
   test: "It should  checks if object name is less than 4 letters long, and if so changes this name to equal "invalid name"."
   Code:
-  const myPizza = new Pizza(1, 2, 'ord');
+  const myPizza = new Pizza(1, 2, 'ord', 1);
   myPizza.prototype.countName()
   Expected Output: "invalid name"
   
@@ -42,7 +42,7 @@ Describe: Pizza.prototype.addPrice()
 
   test: "It should return a sum of numbers from inputted number."
   Code:
-  const myPizza = new Pizza(1, 2, 'order1');
+  const myPizza = new Pizza(1, 2, 'order1', 1);
   myPizza.addPrice()
   Expected Output: 3
 
@@ -50,7 +50,7 @@ Describe: Pizza.prototype.addPrice()
 
   test: "It should add $100 if the user does not select a size."
   Code:
-  const myPizza = new Pizza(1, null, 'order1');
+  const myPizza = new Pizza(1, null, 'order1', 1);
   myPizza.addPrice()
   Expected Output: 101   
 ```

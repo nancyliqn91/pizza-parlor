@@ -57,9 +57,7 @@
       const pizzaLink = document.createElement("a");
       pizzaLink.href = "#"; 
       pizzaLink.textContent = `Pizza #${pizza.id}`; 
-      // pizzaLink.addEventListener("click", function() {
-      //   window.alert("Toppings:" + Array.from(pizza.toppings).join(", ")+"Size:" + Array.from(pizza.size).join(", "));
-      // });
+     
       pizzaElement.appendChild(pizzaLink);
       pizzaListElement.appendChild(pizzaElement);
       totalPrice += newPizza.addPrice(); 
