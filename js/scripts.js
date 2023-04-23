@@ -25,6 +25,9 @@
 
   function handleSubmission(event) {
     event.preventDefault();
+    // Get the current list of pizzas from local storage, or create an empty array if it doesn't exist yet
+    const pizzas = JSON.parse(localStorage.getItem('pizzas')) || [];
+
     function toppingFunction() {
       let toppingPrice = 0;
       const toppings = document.getElementsByName("toppings");
@@ -41,11 +44,12 @@
     const size = sizeInput ? parseInt(sizeInput.value) : null;
     const address = document.querySelector('#location').value;
     
-    let pizzas = [];
     const newPizza = new Pizza(toppings, size, 'order1', pizzas.length + 1);
     pizzas.push(newPizza);
-    console.log(pizzas);
-    
+    // Save the updated list of pizzas to local storage
+    localStorage.setItem('pizzas', JSON.stringify(pizzas));
+
+    let totalPrice = 0;
     const pizzaListElement = document.querySelector(".pizza-list");
     pizzaListElement.innerHTML = ""; 
     pizzas.forEach(function(pizza) {
@@ -53,23 +57,21 @@
       const pizzaLink = document.createElement("a");
       pizzaLink.href = "#"; 
       pizzaLink.textContent = `Pizza #${pizza.id}`; 
-      pizzaLink.addEventListener("click", function() {
-      window.alert("Toppings:", pizza.toppings);
-      });
+      // pizzaLink.addEventListener("click", function() {
+      //   window.alert("Toppings:" + Array.from(pizza.toppings).join(", ")+"Size:" + Array.from(pizza.size).join(", "));
+      // });
       pizzaElement.appendChild(pizzaLink);
       pizzaListElement.appendChild(pizzaElement);
+      totalPrice += newPizza.addPrice(); 
     });
-
-    let priceTotal = 0;
-    pizzas.forEach(function(pizza) {
-      priceTotal += pizza.addPrice(); 
-    });
-    console.log(priceTotal);
-    document.querySelector(".total-price").innerText = `Price is ${priceTotal} dollars. ${address}`; 
+    
+    document.querySelector(".total-price").innerText = `Price is ${totalPrice} dollars. ${address}`; 
   }
   
   function handleConfirm(event) {
     event.preventDefault();
+    // Clear the list of pizzas from local storage
+    localStorage.removeItem('pizzas'); 
     const ordersForm = document.querySelector("form#orders");
     ordersForm.reset();
   }
